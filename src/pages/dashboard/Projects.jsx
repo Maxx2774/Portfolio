@@ -4,6 +4,12 @@ import lockscreen1 from "../../assets/projects/lockscreen.png";
 import lockscreen2 from "../../assets/projects/lockscreen2.png";
 import hakimMp4 from "../../assets/projects/videos/hakimlivs.mp4";
 import useLenisScroll from "../../hooks/useLenisScroll";
+import SupabaseIcon from "../../assets/icons/supabase.svg?react";
+import JavascriptIcon from "../../assets/icons/javascript.svg?react";
+import NodeJsIcon from "../../assets/icons/nodejs.svg?react";
+import BootstrapIcon from "../../assets/icons/Bootstrap.svg?react";
+import ExpressIcon from "../../assets/icons/express.svg?react";
+import ReactIcon from "../../assets/icons/react.svg?react";
 import "./animation.css";
 
 export default function Projects() {
@@ -29,51 +35,53 @@ export default function Projects() {
       x: () => -(vw * (panelCount - 1)),
       ease: "none",
     });
-    // let hakimTl = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: ".panel.hakimlivs",
-    //     containerAnimation: tl,
-    //     start: "left 60%",
-    //     end: "right 30%",
-    //     toggleActions: "play none none none",
-    //   },
-    // });
-    // hakimTl
+    let hakimTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".panel.hakimlivs",
+        containerAnimation: tl,
+        start: "left 70%",
+        end: "right 30%",
+        toggleActions: "play none none none",
+      },
+    });
+    hakimTl
 
-    //   .to({}, { duration: 1 })
-    //   .to(".blur-overlay", { opacity: 1, duration: 1 }, "<+2")
-    //   .fromTo(
-    //     ".hakimlivs-h1",
-    //     { y: -250 },
-    //     {
-    //       opacity: 0.85,
-    //       y: 0,
-    //       color: "black",
-    //       scrollTrigger: {
-    //         trigger: ".panel.hakimlivs",
-    //         containerAnimation: tl,
-    //         start: "left 60%",
-    //         end: "right 30%",
-    //         toggleActions: "play none none none",
-    //       },
-    //     }
-    //   )
-    //   .to(".hakimlivs-h1", { color: "white", duration: 1, opacity: 1 })
+      .fromTo(
+        ".hakimlivs-h1",
+        { y: "-50vh" },
+        {
+          y: 0,
 
-    //   .fromTo(".hakimlivs p", { opacity: 0 }, { opacity: 1 })
-    //   .fromTo(
-    //     ".hakimlivs-h2",
-    //     { opacity: 0, y: 100 },
-    //     { opacity: 1, y: 0, duration: 0.5 },
-    //     "<"
-    //   )
-    //   .fromTo(
-    //     ".hakimlivs-h3",
-    //     { opacity: 0, y: 100 },
-    //     { opacity: 1, y: 0, duration: 0.5 },
-    //     "<+0.2"
-    //   )
-    //   .to(".hakimlivs .live-demo", { opacity: 1, duration: 0.5 }, "<+1");
+          scrollTrigger: {
+            trigger: ".panel.hakimlivs",
+            containerAnimation: tl,
+            start: "left 60%",
+            end: "right 30%",
+            toggleActions: "play none none none",
+          },
+        }
+      )
+
+      .fromTo(".hakimlivs p", { opacity: 0 }, { opacity: 1 })
+      .fromTo(
+        ".hakimlivs-h2",
+        { opacity: 0, y: 100 },
+        { opacity: 1, y: 0, duration: 0.5 },
+        "<"
+      )
+      .fromTo(
+        ".hakimlivs-h3",
+        { opacity: 0, y: 100 },
+        { opacity: 1, y: 0, duration: 0.5 },
+        "<+0.2"
+      )
+      .fromTo(
+        ".hakimlivs .tech-stack > *",
+        { opacity: 0 },
+        { opacity: 1, stagger: 0.2 }
+      )
+      .fromTo(".hakim-mp4", { opacity: 0 }, { opacity: 1, duration: 1 }, "<")
+      .to(".hakimlivs .live-demo", { opacity: 1, duration: 0.5 }, "<+0.5");
 
     let iosTl = gsap.timeline({
       scrollTrigger: {
@@ -97,27 +105,16 @@ export default function Projects() {
           duration: 0.5,
         }
       )
-
-      .fromTo(
-        ".ios h3",
-        { y: 100, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.5,
-        },
-        "<+0.2"
-      )
+      .fromTo(".ios .tech-stack", { opacity: 0, y: 25 }, { opacity: 0.8, y: 0 })
       .to({}, { duration: 0.5 })
-
       .to(".ios .live-demo", { opacity: 1, duration: 1 });
 
     const lockscreenTl = gsap.timeline({
       scrollTrigger: {
         trigger: ".panel.ios",
         containerAnimation: tl,
-        start: "left 10%",
-        end: "right 30%", // longer scroll distance to cover all animations
+        start: "left 30%",
+        end: "right 30%",
         toggleActions: "play none none none",
       },
     });
@@ -131,13 +128,13 @@ export default function Projects() {
       .fromTo(
         ".lockscreen-2",
         { opacity: 0 },
-        { opacity: 1, x: "55%", y: "15%", duration: 0.75 },
-        "<+0.5" // start immediately after previous tween ends
+        { opacity: 1, x: "45%", y: "15%", duration: 0.75 },
+        "<+0.5"
       );
   }, []);
   return (
     <section className="horizontal-scroll">
-      {/* <section className="panel waypoint"></section> */}
+      <section className="panel waypoint"></section>
       <section className="panel hakimlivs">
         <h1 className="hakimlivs-h1">HAKIM LIVS</h1>
         <div className="content">
@@ -146,11 +143,28 @@ export default function Projects() {
               My first major project involved developing the backend and
               collaborating closely with frontend developers and QA testers.
             </h2>
-            <h3 className="hakimlivs-h3">
-              We followed agile methodologies, using Jira for sprint planning
-              and issue tracking, and Confluence for maintaining project
-              documentation.
-            </h3>
+            <div className="tech-stack">
+              <div>
+                <SupabaseIcon className="w-6 h-6 absolute left-2 top-3.5" />
+                <p className="supabase">Supabase</p>
+              </div>
+              <div>
+                <NodeJsIcon className="w-6 h-6 absolute left-2 top-3" />
+                <p className="node-js">Node.js</p>
+              </div>
+              <div>
+                <ExpressIcon className="w-6 h-6 absolute left-3 top-3 fill-white" />
+                <p className="express">Express</p>
+              </div>
+              <div>
+                <JavascriptIcon className="w-6 h-6 absolute left-2.5 rounded-[3px]" />
+                <p className="javascript">Javascript</p>
+              </div>
+              <div>
+                <BootstrapIcon className="w-7 h-7 absolute left-2 top-2.5" />
+                <p className="bootstrap">Bootstrap</p>
+              </div>
+            </div>
           </div>
           <div className="video-container">
             <video
@@ -175,18 +189,22 @@ export default function Projects() {
         >
           Live demo
         </a>
-        <p>MAR 2025</p>
+        <p className="date">MAR 2025</p>
       </section>
       <section className="panel ios">
         <h1>iOS LOCK SCREEN</h1>
-        <h2>
-          One of my earliest projects involved replicating iOS lock screen with
-          music playback controls.
-        </h2>
-        <h3>
-          I also began experimenting with Framer Motion to create smooth
-          animations.
-        </h3>
+        <div className="content">
+          <h2>
+            One of my earliest projects involved replicating iOS lock screen
+            with music playback controls.
+          </h2>
+          <div className="tech-stack">
+            <div>
+              <ReactIcon className="w-7 h-7 absolute left-2 top-2.5 " />
+              <p className="bootstrap">React</p>
+            </div>
+          </div>
+        </div>
         <img src={lockscreen1} className="lockscreen-1" />
         <img src={lockscreen2} className="lockscreen-2" />
         <p className="date">JAN 2024</p>
@@ -198,6 +216,7 @@ export default function Projects() {
           Live demo
         </a>
       </section>
+      <section className="panel"></section>
     </section>
   );
 }

@@ -1,32 +1,125 @@
-.animation {
-  position: relative;
-  width: 100vw;
-  height: 2000svh;
-  background-color: rgb(90, 154, 171);
-  text-align: center;
-}
+/*INTRO */
 
 .developer {
   position: relative;
   width: 100%;
 }
 
-.mnordin {
+.intro {
+  height: 10000px;
+}
+
+.max {
   position: relative;
   width: 100%;
   height: 100vh;
   display: flex;
   font-weight: 1000;
-  font-size: 10vw;
 }
 
-.mnordin-h1 {
+.nav {
+  position: fixed;
+  top: 0dvh;
+  z-index: 5;
+  color: white;
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  padding: 0.5em;
+  gap: 0.5rem;
+}
+
+.nav svg {
+  width: 35px;
+  height: auto;
+}
+
+.max-h1,
+.developer-h2,
+.location {
   position: absolute;
-  top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
+  left: 50%;
+  opacity: 0;
+}
+
+.max-h1 {
+  top: 50dvh;
+  font-size: clamp(1.75rem, 4.5vw, 4.5rem);
+  z-index: 2;
   color: white;
   white-space: nowrap;
+}
+
+.developer-h2 {
+  top: 50dvh;
+  font-size: clamp(2rem, 18vw, 16rem);
+  z-index: 1;
+  letter-spacing: -0.06em;
+  color: rgb(24, 24, 24);
+  line-height: 0.75em;
+}
+
+.location {
+  bottom: 10dvh;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-weight: 400;
+  color: #e3e3e3;
+  display: flex;
+  align-items: center;
+  letter-spacing: 3px;
+}
+
+.location svg {
+  margin-top: 5px;
+  margin-right: 20px;
+  height: 1em;
+  width: auto;
+}
+
+.intro-text {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #a0a0a0;
+  font-size: 1.5rem;
+}
+
+.intro-text h3 {
+  opacity: 0;
+}
+
+.intro-text > :last-child {
+  margin-top: 5rem;
+  max-width: 50%;
+  text-align: center;
+}
+
+.selection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 500;
+}
+
+.selection .my-work {
+  background-color: white;
+  border-radius: 15px;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  max-width: 250px;
+}
+
+/* PROJECTS */
+
+.animation {
+  position: relative;
+  width: 100vw;
+  height: 2000svh;
+  background-color: rgb(90, 154, 171);
+  text-align: center;
 }
 
 .horizontal-scroll {
@@ -43,47 +136,34 @@
 }
 
 .one {
-  background-color: rgb(90, 154, 171);
+  background-color: rgb(155, 160, 192);
 }
 
 .waypoint {
   background-color: #1d1d1d;
 }
 
+/* HAKIM LIVS */
+
 .hakimlivs {
-  background-color: #ffffff;
+  background-color: #121212;
   font-weight: 1000;
   display: flex;
   flex-direction: column;
   width: 100%;
+  color: white;
 }
 
 .hakimlivs h1 {
-  font-family: "Oswald", sans-serif;
   font-size: clamp(4rem, 8vw, 8vw);
   z-index: 2;
-  margin-left: 5rem;
+  margin-left: 4rem;
 }
 
 .hakimlivs h2 {
   z-index: 2;
-  font-size: clamp(1.5rem, 2vw, 2vw);
+  font-size: clamp(1.25rem, 2vw, 2vw);
   line-height: 1.1;
-}
-
-.hakimlivs h3 {
-  z-index: 2;
-  font-size: clamp(1rem, 1.3vw, 1.3vw);
-  margin-top: 2rem;
-}
-
-.hakimlivs p {
-  bottom: 5%;
-  right: 2rem;
-  position: absolute;
-  font-weight: 500;
-  font-size: 1rem;
-  z-index: 2;
 }
 
 .hakim-mp4 {
@@ -93,12 +173,12 @@
 }
 
 .hakimlivs .live-demo {
-  opacity: 1;
   left: 5rem;
 }
 
 .text-container {
-  flex-basis: 70%;
+  flex-basis: 65%;
+  margin-right: 3rem;
 }
 
 .video-container {
@@ -109,71 +189,82 @@
 .hakimlivs .content {
   display: flex;
   max-width: 100%;
-  padding: 2rem 2rem 2rem 5rem;
+  padding: 0rem 2rem 2rem 5rem;
   gap: 2rem;
+}
+
+.hakimlivs .tech-stack {
+  margin-top: 2rem;
+  display: flex;
+  gap: 0.5rem;
+  text-align: center;
+  font-weight: 700;
+  color: rgb(231, 231, 231);
+  font-size: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.tech-stack > * {
+  padding: 8px 20px 10px 45px;
+  gap: 5px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hakimlivs .date {
+  bottom: 2.5rem;
+  right: 2rem;
+  position: absolute;
+  font-weight: 500;
+  font-size: 1rem;
+  z-index: 2;
 }
 
 /*IOS PANEL*/
 
 .ios {
   background-color: white;
-}
-
-.ios h1,
-.ios h2,
-.ios h3,
-.lockscreen-1,
-.lockscreen-2 {
-  will-change: transform, opacity;
-}
-
-.ios h1,
-.ios h2,
-.ios h3 {
-  position: absolute;
   font-weight: 800;
-  text-align: left;
-  line-height: 1;
-  z-index: 3;
+  width: 100%;
 }
+
 .ios h1 {
-  font-size: 7vw;
-  top: 2rem;
-  left: 5%;
+  font-size: clamp(4rem, 6vw, 6vw);
+  margin-left: 2rem;
+  z-index: 10;
+  position: relative;
 }
 
 .ios h2 {
-  font-size: 2.5vw;
-  max-width: 50vw;
-  left: 5%;
-  top: calc(2rem + 10vw);
+  font-size: clamp(1.5rem, 2vw, 2vw);
+  line-height: 1.1;
+  z-index: 10;
+  position: relative;
+  max-width: 50%;
 }
 
-.ios h3 {
-  font-size: 2vw;
-  max-width: 40vw;
-  left: 5%;
-  top: calc(2rem + 20vw);
-}
-
-.ios img {
-  position: absolute;
-  width: clamp(17vw, 25vw, 300px);
+.ios .content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem 2rem 2rem;
 }
 
 .lockscreen-1,
 .lockscreen-2 {
-  top: calc(10vh);
-  right: 20%;
-  z-index: 2;
-}
+  top: 10vh;
+  right: 20vw;
+  z-index: 1;
 
-.lockscreen-2 {
-  z-index: 3;
+  max-width: min(30vw, 35vh);
+  position: absolute;
 }
 
 .ios .date {
-  bottom: 5%;
+  bottom: 2.5rem;
   right: 2rem;
   position: absolute;
   font-weight: 500;
@@ -183,8 +274,8 @@
 .live-demo {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.15);
-  left: 5%;
-  bottom: 5%;
+  left: 2rem;
+  bottom: 2rem;
   padding: 0.5rem;
   border-radius: 25px;
   font-weight: 600;
@@ -193,6 +284,21 @@
   text-align: center;
   z-index: 10;
   opacity: 0;
+}
+
+.ios .tech-stack {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: white;
+  margin-top: 1.5rem;
+  position: relative;
+  z-index: 5;
+  opacity: 0.8;
+}
+
+.ios .tech-stack > :first-child {
+  background-color: rgb(0, 0, 0);
+  width: 125px;
 }
 
 .outro {
@@ -213,6 +319,17 @@
     order: 2;
     max-width: 90%;
   }
+
+  .ios .content {
+    flex-direction: column;
+  }
+  .ios .img-container {
+    margin-top: 2rem;
+  }
+
+  .ios .img-container img {
+    width: 50%;
+  }
 }
 
 @media (max-width: 600px) {
@@ -224,5 +341,47 @@
   }
   .hakimlivs h1 {
     margin-left: 2rem;
+  }
+  .ios h1 {
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .ios h1 {
+    font-size: 2.5rem;
+    margin-top: 1rem;
+  }
+
+  .ios h2 {
+    max-width: 90%;
+  }
+  .lockscreen-1,
+  .lockscreen-2 {
+    top: 25%;
+  }
+  .tech-stack > * {
+    font-size: 1rem;
+    padding-left: 40px;
+    padding-right: 15px;
+  }
+  .tech-stack > div > svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .ios .tech-stack > :first-child {
+    width: 100px;
+  }
+}
+
+@media (max-width: 400px) {
+  .ios h1 {
+    font-size: 2rem;
+  }
+  .ios h2 {
+    font-size: 1rem;
   }
 }
