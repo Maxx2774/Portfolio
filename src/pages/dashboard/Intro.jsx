@@ -6,47 +6,51 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import useLenisScroll from "../../hooks/useLenisScroll";
 import LinkedInIcon from "../../assets/icons/linkedin.svg?react";
 import GithubIcon from "../../assets/icons/github.svg?react";
-gsap.registerPlugin(ScrollTrigger);
 
 export default function Intro() {
   const navigate = useNavigate();
+
   useLenisScroll();
   useGSAP(() => {
-    const introTl = gsap.timeline();
-    introTl.to(".max-h1", { opacity: 1, duration: 1, delay: 1 });
+    gsap.registerPlugin(ScrollTrigger);
+    const ctx = gsap.context(() => {
+      const introTl = gsap.timeline();
+      introTl.to(".max-h1", { opacity: 1, duration: 1, delay: 1 });
 
-    const scrollTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".max",
-        start: "top top",
-        end: "+=500vh",
-        pin: true,
-        scrub: 1.5,
-        pinSpacing: true,
-      },
+      const scrollTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".max",
+          start: "top top",
+          end: "+=500vh",
+          pin: true,
+          scrub: 1.5,
+          pinSpacing: true,
+        },
+      });
+
+      scrollTl
+        .to(".developer-h2", { opacity: 1, duration: 1 })
+        .to(".location", { opacity: 1, delay: 2, duration: 5 })
+        .to({}, { duration: 2 });
+
+      const slowTl = gsap.timeline({
+        scrollTrigger: { trigger: ".max", start: "bottom 20%", end: "+=100vh" },
+      });
+      slowTl
+        .fromTo(
+          ".intro-text h3",
+          { y: 50 },
+          { y: 0, opacity: 1, duration: 1, stagger: 1 }
+        )
+        .to(
+          ".intro-text button",
+
+          { opacity: 1, duration: 2 },
+          "<+1"
+        )
+        .to(".email", { opacity: 1 }, "<+1.5");
     });
-
-    scrollTl
-      .to(".developer-h2", { opacity: 1, duration: 1 })
-      .to(".location", { opacity: 1, delay: 2, duration: 5 })
-      .to({}, { duration: 2 });
-
-    const slowTl = gsap.timeline({
-      scrollTrigger: { trigger: ".max", start: "bottom 20%", end: "+=100vh" },
-    });
-    slowTl
-      .fromTo(
-        ".intro-text h3",
-        { y: 50 },
-        { y: 0, opacity: 1, duration: 1, stagger: 1 }
-      )
-      .to(
-        ".intro-text button",
-
-        { opacity: 1, duration: 2 },
-        "<+1"
-      )
-      .to(".email", { opacity: 1 }, "<+1.5");
+    return () => ctx.revert();
   }, []);
   return (
     <div className="intro">
