@@ -10,9 +10,11 @@ import NodeJsIcon from "../../assets/icons/nodejs.svg?react";
 import BootstrapIcon from "../../assets/icons/Bootstrap.svg?react";
 import ExpressIcon from "../../assets/icons/express.svg?react";
 import ReactIcon from "../../assets/icons/react.svg?react";
+import { useNavigate } from "react-router-dom";
 import "./animation.css";
 
 export default function Projects() {
+  const navigate = useNavigate();
   useLenisScroll();
   useGSAP(() => {
     const panels = document.querySelectorAll(".panel");
@@ -134,7 +136,14 @@ export default function Projects() {
   }, []);
   return (
     <section className="horizontal-scroll">
-      <section className="panel waypoint"></section>
+      <section className="panel waypoint">
+        <button className="back" onClick={() => navigate(-1)}>
+          Back
+        </button>
+        <h1 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white font-extrabold text-[5rem]">
+          SCROLL
+        </h1>
+      </section>
       <section className="panel hakimlivs">
         <h1 className="hakimlivs-h1">HAKIM LIVS</h1>
         <div className="content">
