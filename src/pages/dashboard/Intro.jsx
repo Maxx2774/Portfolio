@@ -2,15 +2,12 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useNavigate } from "react-router-dom";
 import LocationIcon from "../../assets/icons/location.svg?react";
-
-import useLenisScroll from "../../hooks/useLenisScroll";
 import LinkedInIcon from "../../assets/icons/linkedin.svg?react";
 import GithubIcon from "../../assets/icons/github.svg?react";
 
 export default function Intro() {
   const navigate = useNavigate();
 
-  useLenisScroll();
   useGSAP(() => {
     const introTl = gsap.timeline();
     introTl.to(".max-h1", { opacity: 1, duration: 1, delay: 1 });
