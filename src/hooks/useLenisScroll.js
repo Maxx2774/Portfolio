@@ -3,11 +3,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import Lenis from "lenis";
 
-gsap.registerPlugin(ScrollTrigger);
-ScrollTrigger.config({ limitCallbacks: true });
-ScrollTrigger.normalizeScroll(true);
 export default function useLenisScroll() {
   useEffect(() => {
+    ScrollTrigger.config({ limitCallbacks: true });
+    ScrollTrigger.normalizeScroll(true);
     const lenis = new Lenis({
       lerp: 0.1,
       smoothWheel: true,
@@ -23,7 +22,6 @@ export default function useLenisScroll() {
 
     return () => {
       lenis.destroy();
-      ScrollTrigger.getAll().forEach((t) => t.kill());
     };
   }, []);
 }
