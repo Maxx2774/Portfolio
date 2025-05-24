@@ -43,7 +43,7 @@ export default function Intro() {
         { opacity: 1, duration: 2 },
         "<+1"
       )
-      .to(".email", { opacity: 1 }, "<+1.5");
+      .to(".email", { opacity: 1, duration: 2 }, "<+1.5");
   }, []);
   return (
     <div className="intro">
@@ -77,7 +77,7 @@ export default function Intro() {
           essential to success.
         </h3>
         <button className="my-work" onClick={() => navigate("projects")}>
-          My work
+          My Work
         </button>
         <p className="email">maxviggonordin@hotmail.se</p>
       </div>

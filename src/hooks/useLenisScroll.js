@@ -6,10 +6,11 @@ import Lenis from "lenis";
 export default function useLenisScroll() {
   useEffect(() => {
     ScrollTrigger.config({ limitCallbacks: true });
-    ScrollTrigger.normalizeScroll(true);
     const lenis = new Lenis({
       lerp: 0.1,
       smoothWheel: true,
+
+      touchMultiplier: 2,
     });
 
     lenis.on("scroll", ScrollTrigger.update);
@@ -18,7 +19,7 @@ export default function useLenisScroll() {
       lenis.raf(time * 1000);
     });
 
-    gsap.ticker.lagSmoothing(0);
+    gsap.ticker.lagSmoothing(1000, 16);
 
     return () => {
       lenis.destroy();

@@ -84,8 +84,9 @@
   align-items: center;
   justify-content: center;
   color: #a0a0a0;
-  font-size: clamp(1rem, 1vw, 2rem);
+  font-size: clamp(0.8rem, 1vw, 2rem);
   position: relative;
+  padding: 1.5rem;
 }
 
 .intro-text h3 {
@@ -99,17 +100,19 @@
 }
 
 .my-work {
-  background-color: rgb(216, 216, 216);
-  border-radius: 15px;
-  width: 200px;
-  height: 45px;
-  max-width: 250px;
+  background-color: rgb(224, 224, 224);
+  border-radius: 0.75em;
   font-weight: 500;
-  font-size: 1.1rem;
-  color: rgb(32, 32, 32);
+  font-size: clamp(1rem, 1vw, 2rem);
+  padding: 0.5em 3em 0.5em 3em;
+  color: rgb(54, 54, 54);
   margin-top: 5rem;
-
   opacity: 0;
+  transition: 0.2s;
+}
+
+.my-work:hover {
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .email {
@@ -368,13 +371,6 @@
     font-size: 3rem;
     line-height: 1;
     margin-bottom: 1rem;
-  }
-
-  .my-work {
-    width: 125px;
-    height: 35px;
-    border-radius: 10px;
-    font-size: 1rem;
   }
 }
 
