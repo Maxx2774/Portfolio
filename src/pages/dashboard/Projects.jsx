@@ -103,7 +103,12 @@ export default function Projects() {
           duration: 0.5,
         }
       )
-      .fromTo(".ios .tech-stack", { opacity: 0, y: 25 }, { opacity: 0.8, y: 0 })
+      .fromTo(
+        ".ios .tech-stack",
+        { opacity: 0, y: 25 },
+        { opacity: 0.8, y: 0 },
+        "<+0.3"
+      )
       .to({}, { duration: 0.5 })
       .to(".ios .live-demo", { opacity: 1, duration: 1 });
 

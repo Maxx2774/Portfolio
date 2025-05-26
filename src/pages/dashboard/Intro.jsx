@@ -38,12 +38,11 @@ export default function Intro() {
         { y: 0, opacity: 1, duration: 1, stagger: 1 }
       )
       .to(
-        ".intro-text button",
+        ".my-work",
 
         { opacity: 1, duration: 2 },
-        "<+1"
-      )
-      .to(".email", { opacity: 1, duration: 2 }, "<+1.5");
+        "<+2"
+      );
   }, []);
   return (
     <div className="intro">
@@ -63,7 +62,7 @@ export default function Intro() {
         <h2 className="developer-h2">FULLSTACK DEVELOPER</h2>
         <div className="location">
           <LocationIcon />
-          <p className="stockholm">STOCKHOLM</p>
+          <p className="stockholm">Stockholm</p>
         </div>
       </div>
       <div className="intro-text">
@@ -77,9 +76,8 @@ export default function Intro() {
           essential to success.
         </h3>
         <button className="my-work" onClick={() => navigate("projects")}>
-          My Work
+          Projects
         </button>
-        <p className="email">maxviggonordin@hotmail.se</p>
       </div>
     </div>
   );
