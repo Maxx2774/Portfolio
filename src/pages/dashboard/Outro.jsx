@@ -39,7 +39,7 @@ export default function Outro() {
         <FramerMotion />
         <Figma />
       </div>
-      <p className="email">maxviggonordin@hotmail.se</p>
+      <p className="email">maxviggo.nordin@yh.nackademin.se</p>
     </div>
   );
 }
