@@ -1,6 +1,6 @@
 import gsap from "gsap";
-import Dashboard from "./pages/dashboard/Dashboard";
-import Projects from "./pages/dashboard/Projects";
+import Dashboard from "./pages/Dashboard";
+import Projects from "./pages/Projects";
 import useLenisScroll from "./hooks/useLenisScroll";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

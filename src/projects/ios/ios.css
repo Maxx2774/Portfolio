@@ -1,0 +1,124 @@
+.ios {
+  background-color: white;
+  font-weight: 800;
+  width: 100%;
+}
+
+.ios h1 {
+  font-size: clamp(4rem, 6vw, 6vw);
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  z-index: 10;
+  position: relative;
+}
+
+.ios h2 {
+  font-size: clamp(1.5rem, 2vw, 2vw);
+  line-height: 1.1;
+  z-index: 10;
+  position: relative;
+  max-width: 50%;
+}
+
+.ios .content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem 2rem 2rem;
+}
+
+.lockscreen-1,
+.lockscreen-2 {
+  top: 10vh;
+  right: 20vw;
+  z-index: 1;
+
+  max-width: min(30vw, 35vh);
+  position: absolute;
+}
+
+.ios .date {
+  bottom: 2.5rem;
+  right: 2rem;
+  position: absolute;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.live-demo {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.15);
+  left: 2rem;
+  bottom: 2rem;
+  padding: 0.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  width: clamp(120px, 10%, 175px);
+  font-size: clamp(1rem, 1rem, 1.3rem);
+  text-align: center;
+  z-index: 10;
+  opacity: 0;
+}
+
+.ios .tech-stack {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: white;
+  margin-top: 1.5rem;
+  position: relative;
+  z-index: 5;
+  opacity: 0.8;
+}
+
+.ios .tech-stack > :first-child {
+  background-color: rgb(0, 0, 0);
+  width: 125px;
+}
+
+@media (max-width: 1100px) {
+  .ios .content {
+    flex-direction: column;
+  }
+  .ios .img-container {
+    margin-top: 2rem;
+  }
+
+  .ios .img-container img {
+    width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .ios h1 {
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .ios h1 {
+    font-size: 2.5rem;
+    margin-top: 1rem;
+  }
+
+  .ios h2 {
+    max-width: 90%;
+  }
+  .lockscreen-1,
+  .lockscreen-2 {
+    top: 25%;
+  }
+
+  .ios .tech-stack > :first-child {
+    width: 100px;
+  }
+}
+
+@media (max-width: 400px) {
+  .ios h1 {
+    font-size: 2rem;
+  }
+  .ios h2 {
+    font-size: 1rem;
+  }
+}

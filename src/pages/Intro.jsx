@@ -1,9 +1,9 @@
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useNavigate } from "react-router-dom";
-import LocationIcon from "../../assets/icons/location.svg?react";
-import LinkedInIcon from "../../assets/icons/linkedin.svg?react";
-import GithubIcon from "../../assets/icons/github.svg?react";
+import LocationIcon from "../assets/icons/location.svg?react";
+import LinkedInIcon from "../assets/icons/linkedin.svg?react";
+import GithubIcon from "../assets/icons/github.svg?react";
 
 export default function Intro() {
   const navigate = useNavigate();
