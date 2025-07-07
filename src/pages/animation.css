@@ -105,18 +105,17 @@
   position: absolute;
   bottom: 20%;
   font-weight: 500;
-  border-radius: 0.75em;
+  border-radius: 10px;
   background-color: white;
   font-size: clamp(0.8rem, 2vw, 1.5rem);
-  padding: 0.15em 2em 0.2em 2em;
+  padding: 0.3em 2em 0.35em 2em;
   color: #111111;
   opacity: 0;
   transition: 0.2s;
 }
 
 .my-work:hover {
-  background-color: #2e5a98;
-  color: white;
+  background-color: #b9b9b9;
 }
 
 .outro {

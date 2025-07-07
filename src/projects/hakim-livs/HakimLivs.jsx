@@ -9,7 +9,7 @@ import "./hakimlivs.css";
 export default function HakimLivs() {
   return (
     <section className="panel hakimlivs">
-      <h1 className="hakimlivs-h1">GROCERY STORE</h1>
+      <h1 className="hakimlivs-h1">HAKIM LIVS</h1>
       <div className="content">
         <div className="text-container">
           <h2 className="hakimlivs-h2">
